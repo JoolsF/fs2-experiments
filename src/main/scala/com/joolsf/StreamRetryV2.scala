@@ -1,4 +1,5 @@
-import cats.effect.IO._
+package com.joolsf
+
 import cats.effect.{IO, Timer}
 import fs2.Stream
 

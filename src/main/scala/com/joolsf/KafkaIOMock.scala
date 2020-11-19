@@ -1,14 +1,10 @@
+package com.joolsf
+
 import java.util.concurrent.atomic.AtomicInteger
 
-import scala.concurrent.duration.DurationInt
-import scala.concurrent.duration.FiniteDuration
-
-import Util._
-import cats.effect.IO
-import cats.effect.IO._
-import cats.effect.Timer
+import cats.effect.{IO, Timer}
+import com.joolsf.Util.RichIO
 import cats.implicits._
-import fs2.Stream
 
 object KafkaIOMock {
 
@@ -38,12 +34,10 @@ object KafkaIOMock {
             new RuntimeException(s"Read message $i failure")
           )
         case false =>
-          IO(println(s"Read message: $i")) >> IO(s"Record: $i")
+          IO(println(s"Read message: $i")) *> IO(s"Record: $i")
 
       }
 
   }.logErrorAndThrow()
-
-  
 
 }

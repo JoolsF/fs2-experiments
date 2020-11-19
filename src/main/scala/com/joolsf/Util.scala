@@ -1,5 +1,7 @@
+package com.joolsf
+
+import cats.Applicative.ops.toAllApplicativeOps
 import cats.effect.IO
-import cats.implicits._
 
 object Util {
 
@@ -7,7 +9,7 @@ object Util {
 
     def logErrorAndThrow(): IO[A] =
       io.handleErrorWith { error =>
-        IO(println(s"Error: ${error.getMessage}")) >> IO
+        IO(println(s"Error: ${error.getMessage}")) *> IO
           .raiseError(error)
       }
   }

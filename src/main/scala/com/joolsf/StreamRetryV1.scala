@@ -1,15 +1,14 @@
-import java.util.concurrent.atomic.AtomicInteger
+package com.joolsf
 
-import cats.effect.IO._
+import cats.FlatMap.ops.toAllFlatMapOps
 import cats.effect.{IO, Timer}
-import cats.implicits._
 import fs2.Stream
 
 import scala.concurrent.duration.{DurationInt, FiniteDuration}
-import Util._
+
 object StreamRetryV1 {
 
-  import KafkaIOMock._
+  import com.joolsf.KafkaIOMock._
 
   def sleepWithBackOff: Stream[fs2.Pure, FiniteDuration] =
     Stream.unfold(1.second) { s =>

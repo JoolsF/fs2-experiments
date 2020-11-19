@@ -1,3 +1,5 @@
+package com.joolsf
+
 import cats.effect.{ContextShift, IO, Timer}
 import fs2.kafka._
 

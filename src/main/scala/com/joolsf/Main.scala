@@ -1,4 +1,5 @@
-import StreamRetryV2.stream
+package com.joolsf
+
 import cats.effect.{ExitCode, IO, IOApp}
 
 object Main extends IOApp {
@@ -25,7 +26,6 @@ object Main extends IOApp {
       .toList
       .map(println)
       .map(_ => ExitCode.Success)
-      
 
 //    StreamRetryV2.stream
 //      .take(3)
