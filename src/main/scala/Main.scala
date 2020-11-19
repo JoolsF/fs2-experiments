@@ -25,6 +25,7 @@ object Main extends IOApp {
       .toList
       .map(println)
       .map(_ => ExitCode.Success)
+      
 
 //    StreamRetryV2.stream
 //      .take(3)

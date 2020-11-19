@@ -8,6 +8,9 @@ target
 /.settings
 /RUNNING_PID
 /.g8
+/.bloop
+/.vscode
+/.metals
 
 .cache
 .classpath
