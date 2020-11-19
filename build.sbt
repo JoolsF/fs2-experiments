@@ -10,7 +10,7 @@ resolvers += "confluent" at "https://packages.confluent.io/maven/"
 lazy val root = (project in file("."))
   .settings(
     name := "fs2-experiments",
-    libraryDependencies ++= Seq(scalaTest % Test, fs2Kafka, vulcan)
+    libraryDependencies ++= Seq(fs2Kafka, vulcan)
   )
 
 // See https://www.scala-sbt.org/1.x/docs/Using-Sonatype.html for instructions on how to publish to Sonatype.

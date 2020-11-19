@@ -8,9 +8,9 @@ import cats.effect.{IO, Timer}
 
 object KafkaIOMock {
 
-  def error: IO[Boolean] = IO(scala.util.Random.nextInt(5) == 4)
+  private def error: IO[Boolean] = IO(scala.util.Random.nextInt(7) == 6)
 
-  val i = new AtomicInteger(1)
+  private val i = new AtomicInteger(1)
 
   def commitOffset(): IO[Unit] = {
     val commit = IO(i.getAndIncrement())
