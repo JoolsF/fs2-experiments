@@ -1,12 +1,14 @@
-import cats.effect.{ContextShift, ExitCode, IO}
-import cats.syntax.functor._
+import cats.effect.{ContextShift, IO, Timer}
 import fs2.kafka._
 
 import scala.concurrent.duration._
 
 class KafkaExample1 {
 
-  def stream(implicit cs: ContextShift[IO]): IO[ExitCode] = {
+  def stream(implicit
+      cs: ContextShift[IO],
+      t: Timer[IO]
+  ): fs2.Stream[IO, Unit] = {
     def processRecord(
         record: ConsumerRecord[String, String]
     ): IO[(String, String)] =
