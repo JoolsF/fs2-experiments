@@ -1,10 +1,10 @@
-package com.joolsf
+package com.joolsf.retryexamples
 
 import java.util.concurrent.atomic.AtomicInteger
 
+import cats.Applicative.ops.toAllApplicativeOps
+import com.joolsf.Util._
 import cats.effect.{IO, Timer}
-import com.joolsf.Util.RichIO
-import cats.implicits._
 
 object KafkaIOMock {
 

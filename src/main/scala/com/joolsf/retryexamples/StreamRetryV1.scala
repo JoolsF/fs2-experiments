@@ -1,4 +1,4 @@
-package com.joolsf
+package com.joolsf.retryexamples
 
 import cats.FlatMap.ops.toAllFlatMapOps
 import cats.effect.{IO, Timer}
@@ -8,7 +8,7 @@ import scala.concurrent.duration.{DurationInt, FiniteDuration}
 
 object StreamRetryV1 {
 
-  import com.joolsf.KafkaIOMock._
+  import com.joolsf.retryexamples.KafkaIOMock._
 
   def sleepWithBackOff: Stream[fs2.Pure, FiniteDuration] =
     Stream.unfold(1.second) { s =>

@@ -1,7 +1,7 @@
-package com.joolsf
+package com.joolsf.retryexamples
 
 import cats.effect.{IO, Timer}
-import fs2.Stream
+import fs2._
 
 import scala.concurrent.duration.DurationInt
 

@@ -1,6 +1,7 @@
 package com.joolsf
 
 import cats.effect.{ExitCode, IO, IOApp}
+import com.joolsf.retryexamples.StreamRetryV1
 
 object Main extends IOApp {
 
