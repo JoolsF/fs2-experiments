@@ -5,12 +5,11 @@ import cats.effect.{ExitCode, IO, IOApp}
 import com.joolsf.retryexamples.StreamRetryV2
 import fs2._
 import cats.implicits._
-import com.joolsf.simpleapp1.SimpleExample1
+import com.joolsf.simpleapp1.SimpleFs2Demo1
 
 object Main extends IOApp {
 
   def run(args: List[String]): IO[ExitCode] = {
-
 
 //    StreamRetryV1.streamWithAttempts
 //      .take(15)
@@ -40,14 +39,9 @@ object Main extends IOApp {
 //      .map(println)
 //      .map(_ => ExitCode.Success)
 
-    val se1 = new SimpleExample1
-    se1
-      .stream
-      .compile
-      .drain
+    val se1 = SimpleFs2Demo1.apply
+    se1.stream.compile.drain
       .as(ExitCode.Success)
-
-
 
   }
 
